@@ -46,7 +46,7 @@ app.get('*', (_req, res) => res.sendFile(INDEX_HTML));
 
 console.log(chalk.green('Initialization complete'));
 
-const port = Number(process.env.PORT ?? 2150);
+const port = Number(process.env.PORT ?? 3000);
 const url = `http://localhost:${port}`;
 
 posthog.capture({ event: 'user started Srcbook application' });
