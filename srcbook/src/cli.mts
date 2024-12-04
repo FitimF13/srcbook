@@ -51,7 +51,7 @@ export default function program() {
   program
     .command('start')
     .description('Start the Srcbook server')
-    .option('-p, --port <port>', 'Port to run the server on', '2150')
+    .option('-p, --port <port>', 'Port to run the server on', '3000')
     .action(({ port }) => {
       startServer(port, () => {
         openInBrowser(`http://localhost:${port}`);
@@ -61,7 +61,7 @@ export default function program() {
   program
     .command('import')
     .description('Import a Srcbook')
-    .option('-p, --port <port>', 'Port of the server', '2150')
+    .option('-p, --port <port>', 'Port of the server', '3000')
     .argument('<specifier>', 'An identifier of a Srcbook on hub.srcbook.com')
     .action(async (specifier, { port }) => {
       const portAvailable = await isPortAvailable('localhost', port);
