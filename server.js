@@ -1,9 +1,7 @@
 const { exec } = require('child_process');
-
-// Hole den von Render bereitgestellten Port oder nutze einen Standardport
 const PORT = process.env.PORT || 2150;
 
-// Starte die Anwendung und setze den Port dynamisch
+// Starte den Service mit dem richtigen Port
 const command = `PORT=${PORT} pnpm start`;
 
 exec(command, (error, stdout, stderr) => {
