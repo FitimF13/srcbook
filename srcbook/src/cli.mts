@@ -53,9 +53,10 @@ export default function program() {
     .description('Start the Srcbook server')
     .option('-p, --port <port>', 'Port to run the server on', '3000')
     .action(({ port }) => {
-      startServer(port, () => {
-        openInBrowser(`http://localhost:${port}`);
-      });
+      startServer(process.env.PORT || port, () => {
+        openInBrowser(`http://localhost:${process.env.PORT || port}`);
+          });
+
     });
 
   program
